@@ -46,7 +46,7 @@ export class ProfilePage implements OnInit {
 
     this.userlist.map(function(item) {
       toStalk.followingList.push({
-        "phoneNumber":"050123456",
+        "phoneNumber":"972508841819",
         "following": item,
         "followerName": "ronito"
       });
