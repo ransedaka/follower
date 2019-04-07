@@ -9,65 +9,46 @@
 
   <form #formCtrl="ngForm">
     <div align="left" *ngIf="formCtrl.form.valid">
-      <p>
-        <img class="profile-image" align=middle class="profile-image" src="../../../assets/img/profile.jpg">
-        <b>Ronit, Oren</b>
-      </p>
+    <div class="username-container">
+      <img class="profile-image" align=middle class="profile-image" src="../../../assets/img/profile.jpg">
+
+      <p class="username">Ronit Oren</p>
+
     </div>
 
-    <ion-list>
+      <div class="follow-container">
+        <div (click)="stalk()" class="follow btn-action">
+          Stalk {{stalkCount}}
+        </div>
+        <div class="runaway btn-action">
+          Run Away
+        </div>
+      </div>
 
-      <ion-item *ngFor="let user of (users| async)?.users">
-        <ion-radio>
-          <h2>{{user.name}}   </h2>
-        </ion-radio>
-        <ion-thumbnail item-left>
-          <img src="{{user.picUrl}}">
-        </ion-thumbnail>
+      <div class="buffer">
+        <div class="harmaners-container">
+          Harmaners
+        </div>
+      </div>
+    </div>
 
-      </ion-item>
+    <div class="container-grid">
+      <div class="item-container" *ngFor="let user of (users | async)?.users" [ngStyle]="{ 'background-image': 'url(' + user.picUrl + ')'}">
+        <div class="label-container">
+          <div class="text">{{user.name}}</div>
+          <div class="checkbox-container" >
+            <ion-checkbox (click)="checkboxClick(user.name)" > </ion-checkbox>
 
-    </ion-list>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
 
-    <!--<button color="secondary" [disabled]="!formCtrl.form.valid" ion-button block (click)="toFollow()">2follow</button>
-    <button color="danger" ion-button block (click)="toRunaway()">2Runaway</button>-->
+
   </form>
 </ion-content>
-
-
-<!--<ion-searchbar [(ngModel)]="searchTerm" (ionChange)="searchChanged($event)"></ion-searchbar>
-
-<ion-item>
-  <ion-label>Select Searchtype</ion-label>
-  <ion-select [(ngModel)]="type" (ionChange)="searchChanged($event)">
-    <ion-select-option value="">All</ion-select-option>
-    <ion-select-option value="movie">Movie</ion-select-option>
-    <ion-select-option value="series">Series</ion-select-option>
-    <ion-select-option value="episode">Episode</ion-select-option>
-  </ion-select>
-</ion-item>
-
-<ion-list>
-
-  <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'movies', item.imdbID]">
-    <ion-avatar slot="start">
-      <img [src]="item.Poster" *ngIf="item.Poster != 'N/A'">
-    </ion-avatar>
-
-    <ion-label text-wrap>
-      <h3>{{ item.Title }}</h3>
-      {{ item.Year }}
-    </ion-label>
-
-    <ion-icon slot="end" *ngIf="item.Type == 'movie'" name="videocam"></ion-icon>
-    <ion-icon slot="end" *ngIf="item.Type == 'series'" name="tv"></ion-icon>
-    <ion-icon slot="end" *ngIf="item.Type == 'game'" name="logo-game-controller-b"></ion-icon>
-
-  </ion-item>
-
-</ion-list>-->
-
 
 
 
