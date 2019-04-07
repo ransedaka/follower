@@ -15,9 +15,7 @@ export class ProfilePage implements OnInit {
   constructor(private usersService: UsersService) { }
 
   ngOnInit() {
-  }
-
-  getUsers(){
     this.results = this.usersService.getUsers();
   }
+
 }
