@@ -15,6 +15,8 @@ export class ProfilePage implements OnInit {
   users: Observable<any>;
   userlist: any;
   stalkCount = 0;
+  runAwayCount = 0;
+
   constructor(public navCtrl: NavController, public http: HttpClient) {
     this.users= this.http.get('http://ec2-34-243-7-84.eu-west-1.compute.amazonaws.com:8080/v1/users')
     this.users.subscribe(data => {console.log('my data: ', data);})

@@ -1,6 +1,3 @@
-page-profile {
-
-}
 .username-container{
   display: flex;
   justify-content: flex-start;
@@ -20,24 +17,23 @@ page-profile {
   height: 3rem;
 
   .harmaners-container{
-    background-color: #bfbfbf;
+    background-color: #aad7f7;
     border-radius: 50px;
     padding: 0.5rem;
     font-size: 0.75rem;
     display: inline;
+    margin-right: 1rem;
   }
 }
 
 .follow-container {
-  display: flex;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 
   .btn-action {
     display: inline;
     padding: 0.5rem 0.75rem;
-    background-color: #9c9cde;
-    border-radius: 50px;
+    background-color: #e8e8f5;
     font-size: 0.75rem;
     margin-right: 1rem;
   }
@@ -71,7 +67,7 @@ item-checkbox-img {
       justify-content: space-between;
       .text{
             color: white;
-            padding: 1rem;
+            padding: 0.5rem;
         }
     }
     .checkbox-container{
